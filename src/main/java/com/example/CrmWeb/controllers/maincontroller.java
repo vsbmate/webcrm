@@ -1,6 +1,7 @@
 package com.example.CrmWeb.controllers;
 
 import com.example.CrmWeb.models.EventModel;
+import com.example.CrmWeb.repositories.RepositoryEvents;
 import com.example.CrmWeb.services.EventsActions;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class maincontroller {
     private final EventsActions finEventsActions;
+    private final RepositoryEvents repositoryEvents;
 
     //admin panel
     @GetMapping("/admin")
@@ -51,7 +53,7 @@ public class maincontroller {
         if(bindingResult.hasErrors()){
             return "main";
         }
-        if(event.getTime().isAfter(LocalDateTime.now())) {
+        if(event.getTime().isAfter(LocalDateTime.now()) && !repositoryEvents.existsByTime(event.getTime())) {
             finEventsActions.saveEvent(event);
             return "redirect:/";
         }else{

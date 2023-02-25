@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface RepositoryEvents extends JpaRepository<EventModel, Long> {
     List<EventModel> findByPhoneNumber(String phoneNumber);
+    boolean existsByTime(LocalDateTime time);
 
 }
