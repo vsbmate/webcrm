@@ -27,7 +27,7 @@
      <b>Имя клиента: </b>${event.name}<br>
         <b>Номер телефона клиента: </b>${event.phoneNumber}<br>
         <b>Наименование услуги: </b>${event.service}<br>
-        <b>Время: </b>${event.time}<br>
+        <b>Время: </b>${event.time}> - ${event.timeOfEnd}<br><br>
 
 
 

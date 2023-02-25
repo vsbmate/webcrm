@@ -31,6 +31,7 @@ public class EventsActions extends EventModel{
     //saveEvent method for create a new event
     public void saveEvent(EventModel event) {
         log.info("Saving new {}", event);
+        event.setTimeOfEnd();
         repositoryEvents.save(event);
     }
 
