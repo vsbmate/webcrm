@@ -6,14 +6,8 @@ import com.example.CrmWeb.repositories.RepositoryEvents;
 import com.example.CrmWeb.repositories.RepositoryUsers;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.asm.Advice;
 import org.springframework.stereotype.Service;
-
 import java.security.Principal;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.Period;
-import java.time.chrono.ChronoPeriod;
 import java.util.List;
 
 @Service
@@ -34,7 +28,6 @@ public class EventsActions extends EventModel{
     //saveEvent method for create a new event
     public void saveEvent(EventModel event) {
         log.info("Saving new {}", event);
-//        event.setTimeOfEnd();
         repositoryEvents.save(event);
     }
 

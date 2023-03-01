@@ -10,9 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.security.Principal;
 import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDateTime;
 
 
 @Controller
@@ -51,7 +49,7 @@ public class maincontroller {
     //create a new event
     @PostMapping("/")
     public String createEvent(@ModelAttribute("event")@Valid EventModel event, BindingResult bindingResult){
-
+        event.setTimeOfEnd();
         if (bindingResult.hasErrors()){
             return "main";
         }
