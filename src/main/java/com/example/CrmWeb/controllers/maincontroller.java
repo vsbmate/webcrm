@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDateTime;
 
 
 @Controller
@@ -50,13 +51,23 @@ public class maincontroller {
     //create a new event
     @PostMapping("/")
     public String createEvent(@ModelAttribute("event")@Valid EventModel event, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
+
+        if (bindingResult.hasErrors()){
             return "main";
         }
-        if(event.getTime().isAfter(LocalDateTime.now()) && !repositoryEvents.existsByTime(event.getTime())) {
+        if (event.getTime().isAfter(LocalDateTime.now()) && !repositoryEvents.existsByTimeBefore(event.getTimeOfEnd())){
             finEventsActions.saveEvent(event);
             return "redirect:/";
-        }else{
+        }
+        else if (event.getTime().isAfter(LocalDateTime.now()) && !repositoryEvents.existsByTimeOfEndAfter(event.getTime())) {
+            finEventsActions.saveEvent(event);
+            return "redirect:/";
+        }
+        else if (event.getTime().isAfter(LocalDateTime.now()) && !repositoryEvents.existsByTimeOfEndAfterAndTimeBefore(event.getTime(), event.getTimeOfEnd())){
+            finEventsActions.saveEvent(event);
+            return "redirect:/";
+        }
+        else {
             return "unavailableTime";
         }
     }

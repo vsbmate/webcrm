@@ -29,6 +29,8 @@
     Выберите время: <br>
     <input type="datetime-local" name="time"/><br><br>
     <br><br>
+    <input type="datetime-local" name="timeOfEnd"/><br><br>
+    <br><br>
 
 
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>

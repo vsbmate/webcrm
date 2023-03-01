@@ -43,8 +43,8 @@ public class EventModel {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime timeOfEnd;
 
-    public void setTimeOfEnd() {
-        this.timeOfEnd = time.plusHours(1);
+    public void setTimeOfEnd() {this.timeOfEnd = time.plusHours(1);
     }
+
 }
 
