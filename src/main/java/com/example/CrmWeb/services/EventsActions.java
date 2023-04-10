@@ -9,6 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -44,6 +45,17 @@ public class EventsActions extends EventModel{
     //get any created event by id. If event doesn't created return null
     public EventModel getEventById(Long id){
         return repositoryEvents.findById(id).orElse(null);
+    }
+
+    public EventModel editEventForm(EventModel eventModel) {
+        Optional<EventModel> event = repositoryEvents.findById(eventModel.getId());
+            EventModel updatedEvent = event.get();
+            updatedEvent.setName(eventModel.getName());
+            updatedEvent.setPhoneNumber(eventModel.getPhoneNumber());
+            updatedEvent.setService(eventModel.getService());
+            updatedEvent.setTime(eventModel.getTime());
+            repositoryEvents.save(updatedEvent);
+            return updatedEvent;
     }
 
 }

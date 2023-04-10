@@ -35,6 +35,11 @@
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="submit" value="Удалить запись"/>
     </form><br><br><br>
+
+    <form action="/event/${event.id}/edit" method="get">
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+        <input type="submit" value="Изменить запись"/>
+    </form><br><br><br>
 </#list>
 
 
