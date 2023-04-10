@@ -1,0 +1,17 @@
+[33mcommit 5a82ce8585104799b580a6b3d84fa4d884333cf3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Vladislav Bogdanov <vsb.mate@gmail.com>
+Date:   Sun Feb 26 00:56:40 2023 +0700
+
+    Added the time when event is end
+
+[33mcommit fdb016b0584307e4039cddf99ab78f3ef476cf9d[m
+Author: Vladislav Bogdanov <vsb.mate@gmail.com>
+Date:   Sat Feb 25 21:22:04 2023 +0700
+
+    Added the function of not being able to create an event for an already occupied time
+
+[33mcommit b0eb42a08a123ae92020151bfd7848816a9703e6[m
+Author: Vladislav Bogdanov <vsb.mate@gmail.com>
+Date:   Wed Feb 22 21:56:02 2023 +0700
+
+    adding all files
