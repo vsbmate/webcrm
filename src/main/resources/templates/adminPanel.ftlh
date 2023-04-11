@@ -4,23 +4,25 @@
     <title>MAIN PAGE</title>
 </head>
 <body>
-<h1>WebCRM</h1><hr>
-<h4>Записи: </h4><br>
-
-
-<form action="admin" method="get">
-    Поиск клиента по номеру телефона: <input type="text", name="phoneNumber">
-    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    <input type="submit" value="Найти">
-</form>
-<form action="admin" method="get">
-    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    <input type="submit" value="Назад">
-</form>
+<h1>WebCRM | <a href="/logout">Выйти</a></h1><hr>
+<div align="right">
 <form action="/logout" method="get">
     <input type="hidden" name ="_scrf" value="${_csrf.token}"/>
     <input type="submit" value="Выйти">
 </form>
+</div>
+
+
+<div align="left">
+    <form action="admin" method="get">
+        Поиск клиента по номеру телефона:<br><input type="text", name="phoneNumber">
+        <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+        <input type="submit" value="Найти">
+    </form>
+</div><br><br>
+
+
+<h4>Записи:</h4>
 
 <#list events as event>
 
@@ -34,7 +36,7 @@
     <form action="/event/delete/${event.id}" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <input type="submit" value="Удалить запись"/>
-    </form><br><br><br>
+    </form>
 
     <form action="/event/${event.id}/edit" method="get">
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>

@@ -5,13 +5,16 @@
     <title>WebCRM</title>
 </head>
 <body>
+<div align="center">
 <h1>Авторизация</h1>
 <form action="/login" method="post">
-    Электронная почта: <input type="email" name="username"><br><br>
+    Email:  <input type="email" name="username"><br><br>
     Пароль: <input type="password" name="password"><br><br>
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-    <input type="submit" value="Вход"/>
+    <input type="submit" value="Вход" />
+
 </form>
 <a href="/registration">Зарегистрироваться</a>
+</div>
 </body>
 </html>

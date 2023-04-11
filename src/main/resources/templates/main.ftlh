@@ -7,12 +7,14 @@
     <title>MAIN PAGE</title>
 </head>
 <body>
-<h1>WebCRM | <a href="/login">Войти</a> </h1><hr>
-<hr>
+<h1>WebCRM | <a href="/login">Вход</a></h1><hr><hr>
+
+<div align="center">
+
 <h3>Создать онлайн запись</h3>
 
-
 <form action="/" method="post">
+
 
     Ваше имя: <br>
     <@spring.formInput "event.name"/>
@@ -36,6 +38,6 @@
 
 </form>
 
-
+</div>
 </body>
 </html>

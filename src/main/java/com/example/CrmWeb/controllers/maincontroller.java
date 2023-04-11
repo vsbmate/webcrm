@@ -91,6 +91,6 @@ public class maincontroller {
     @PostMapping("/event/{id}/edit")
     public String editUser(@PathVariable Long id, @ModelAttribute("event") EventModel newEvent) {
         finEventsActions.editEventForm(newEvent);
-        return "redirect:/";
+        return "redirect:/admin";
     }
 }

@@ -9,6 +9,7 @@
 <body>
 <h1>WebCRM | <a href="/login">Войти</a> </h1><hr>
 <hr>
+<div align="center">
 <h3>Изменить запись</h3>
 
 
@@ -36,7 +37,7 @@
     </form><br><br><br>
 
 </form>
-
+</div>
 
 </body>
 </html>
